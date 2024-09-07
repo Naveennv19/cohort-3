@@ -1,0 +1,84 @@
+.top-box{
+    color: white; 
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 10; 
+    display:flex; 
+    justify-content: space-between;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    padding: 10px 0;
+    padding-left: 120;
+    padding-top: 20;
+    background-color: black;
+}
+
+.topLink{
+    color: gray;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.large-button{
+    color:white;
+    width: 135px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: black;
+    
+}
+.large-button_1{
+    color:white;
+    width: 170px;
+    height: 32px;
+    border-radius: 5px;
+    background-color: black;
+    border: 1px solid grey
+}
+
+.theme-icon-light{
+    margin-left:-12px;
+    margin-right: -12;
+    margin-top: -5;
+    margin-bottom: -5;
+    padding-right: 10;
+    padding-top: 5;
+    color:grey;
+    width: 30px;
+    height: 25px;
+    border-radius: 0px;
+    background-color: black;
+}
+
+.hero-tag{
+    color: gray;
+    border: 0.2px solid grey; /* 2px solid green border */
+    padding: 7px; /* Padding inside the span */
+    border-radius: 15px;
+
+}
+.sec-button{
+    color:white;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgb(15, 127, 231);
+    border: 1px solid grey
+}
+
+
+
+    .horizontal-line {
+        border-top: 1px solid grey; /* Set the top border */
+        width: 100%; /* Set the width of the line */
+        margin: 20px 0; /* Add some margin for spacing */
+        padding-top: 5px; /* Add 50 pixels of padding at the top */
+    }
+    

@@ -1,0 +1,50 @@
+
+.topLink{
+    font-style: normal;
+    font-size: 13px;
+    color: gray;
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+.search-botton{
+    border: none; 
+    background: none;
+    padding-left: 40px;
+    padding-top: 40;
+    margin-top: 40;
+    color: white;
+    background-color: white;
+    border-radius: 30px;
+}
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-left: 200px;
+    margin-right: -35px;
+
+}
+
+.container img {
+    width: 40px; 
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 20px; 
+}
+
+.container p {
+    margin: 0;
+    font-size: 16px; 
+    color: #1e1d1d; 
+    margin-right: 15px; 
+}
+.container a {
+    text-decoration: none; 
+    color: #007bff;
+    font-size: 14px; 
+
+}

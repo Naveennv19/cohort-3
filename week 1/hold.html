@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Store Online - Apple(IN)</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 100vw; /* Full viewport width */
+            left: 0; /* Align to the left edge of the viewport */
+            box-shadow: 0px 8px 16px 0px rgba(75, 75, 75, 0.2);
+            z-index: 1;
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffffff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown span {
+            cursor: pointer;
+            color: rgb(117, 117, 117);
+            padding: 10px 20px;
+            font-weight: lighter;
+            font-size: smaller;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: start;
+            padding: 20px;
+        }
+
+        .nav-container > div {
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div>
+            <span class="dropdown">
+                <span>Store</span>
+                <div class="dropdown-content"  style="left: 0;">
+                    <a href="/">Shop the latest</a>
+                    <a href="/">Mac</a>
+                    <a href="/">iPad</a>
+                    <a href="/">iPhone</a>
+                    <a href="/">Apple Watch</a>
+                    <a href="/">Accessories</a>
+                </div>
+            </span>
+        </div>
+        <div>
+            <span class="dropdown">
+                <span>Mac</span>
+                <div class="dropdown-content"  style="left: 0;">
+                    <a href="/">Explore All Mac</a>
+                    <a href="/">MacBook Air</a>
+                    <a href="/">MacBook Pro</a>
+                    <a href="/">iMac</a>
+                    <a href="/">Mac mini</a>
+                    <a href="/">Mac Studio</a>
+                    <a href="/">Mac Pro</a>
+                    <a href="/">Display</a>
+                </div>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
