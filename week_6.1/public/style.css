@@ -1,0 +1,23 @@
+.signup{
+    
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.signin{
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+
+}
