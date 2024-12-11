@@ -1,0 +1,9 @@
+1. have a users array
+2. create a signup route
+    take username password and push to array
+3. create a signin route
+    take username password and check if it exists in array
+    if exists generate token and set/create a token field for that user
+4. create /me route
+    send the token and verify if the user exists
+    if the user exists then send successful message with username

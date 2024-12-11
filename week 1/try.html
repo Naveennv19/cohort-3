@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: rgb(188, 181, 226);">
+
+    <div id="signup-section" class="signup">
+        <h2>Signup</h2>
+        <input id="signup-username" type="text" name="username" placeholder="Username">
+        <input id="signup-password" type="password" name="password" placeholder="Password">
+        <button onclick="signup()">Submit</button>
+    </div>
+
+    <div id="signin-section" class="signin">
+        <h2>Signin</h2>
+        <input id="signin-username" type="text" name="username" placeholder="Username">
+        <input id="signin-password" type="password" name="password" placeholder="Password">
+        <button onclick="signin()">Submit</button>
+    </div>
+
+    <div id="user-info-section" class="info" style="display: none;">
+        <h2>User Information</h2>
+        <div id="information"></div>
+    </div>
+
+    <div id="logout-section" class="logout" style="display: none;">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <script>
+        async function signup() {
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+            try {
+                await axios.post("http://localhost:3000/signup", {
+                    username: username,
+                    password: password
+                });
+                alert("Signed up successfully");
+                render();
+            } catch (error) {
+                alert("Signup failed: " + error.response.data.message);
+            }
+        }
+
+        async function signin() {
+            const username = document.getElementById("signin-username").value;
+            const password = document.getElementById("signin-password").value;
+
+            try {
+                const response = await axios.post("http://localhost:3000/signin", {
+                    username: username,
+                    password: password
+                });
+                localStorage.setItem("token", response.data.token);
+                alert("Signed in successfully");
+                render();
+            } catch (error) {
+                alert("Signin failed: " + error.response.data.message);
+            }
+        }
+
+        async function getUserInformation() {
+            try {
+                const response = await axios.get("http://localhost:3000/me", {
+                    headers: {
+                        token: localStorage.getItem("token")
+                    }
+                });
+                document.getElementById("information").innerHTML = "Username: " + response.data.username;
+            } catch (error) {
+                alert("Failed to fetch user information");
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("token");
+            alert("Logged out successfully");
+            render();
+        }
+
+        function render() {
+            const token = localStorage.getItem("token");
+
+            const signupSection = document.getElementById("signup-section");
+            const signinSection = document.getElementById("signin-section");
+            const userInfoSection = document.getElementById("user-info-section");
+            const logoutSection = document.getElementById("logout-section");
+
+            if (token) {
+                signupSection.style.display = "none";
+                signinSection.style.display = "none";
+                userInfoSection.style.display = "block";
+                logoutSection.style.display = "block";
+                getUserInformation();
+            } else {
+                signupSection.style.display = "block";
+                signinSection.style.display = "block";
+                userInfoSection.style.display = "none";
+                logoutSection.style.display = "none";
+            }
+        }
+
+        // Initial call to set the correct visibility based on the login state
+        render();
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ function logger(req, res, next) {
     next();
 }
 
-// localhost:3000
+// localhost:3000/
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/public/index.html");
 })
@@ -63,9 +63,10 @@ app.post("/signin", logger, function(req, res) {
 function auth(req, res, next) {
     const token = req.headers.token;
     const decodedData = jwt.verify(token, JWT_SECRET);
+    //console.log(decodedData);
+    console.log(decodedData.username)
 
     if (decodedData.username) {
-        // req = {status, headers...., username, password, userFirstName, random; ":123123"}
         req.username = decodedData.username
         next()
     } else {
